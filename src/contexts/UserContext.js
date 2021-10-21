@@ -11,6 +11,7 @@ const UserContextProvider = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isSearching, setIsSearching] = useState(false);
   const [firstRender, setFirstRender] = useState(true);
+  
   const fetchData = async (url) => {
     try {
       const response = await fetch(url);

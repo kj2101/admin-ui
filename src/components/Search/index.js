@@ -5,13 +5,13 @@ import { SearchWrapper, SearchInput } from "./SearchElements";
 function Search() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const { users, setFilteredUsers, setFirstRender, setIsSearching } =
+  const { users, setFilteredUsers, setFirstRender, setIsSearching,showModal } =
     useContext(UserContext);
 
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
   useEffect(() => {
     searchCharacters(debouncedSearchTerm);
-  }, [debouncedSearchTerm]);
+  }, [debouncedSearchTerm,showModal]);
   function searchCharacters(text) {
     text = text.toLowerCase();
     setFilteredUsers(
